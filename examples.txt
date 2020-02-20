@@ -1,0 +1,96 @@
+﻿if/else:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+String securityAnswer = (man.getAge() > 18) ? "Все в порядке, проходите!" : "Этот фильм не подходит для вашего возраста!";
+
+
+Thread::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+class x extends Thread{
+	public void run(){
+		// ��������
+	}
+}
+
+public class Main {
+	public static void main(String[] args){
+	
+		SomeThread x = new SomeThread();
+		x.start();
+	}
+}
+
+Reader::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		int x = Integer.parseInt(reader.readLine());
+        String s = bufferedReader.readLine();
+        
+-BiteRead
+
+       FileInputStream fileInputStream = new FileInputStream("C:\\t.txt");
+       int i;
+       while((i=fileInputStream.read())!= -1){
+           System.out.print((char)i);
+       }
+       
+-BlockRead
+
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream("C:\\t.txt"), 200); // 200 - кол-во байтов для чтения
+        int i;
+        while((i = bufferedInputStream.read())!= -1){
+            System.out.print((char)i);
+        }
+
+Timer:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+package SandBox;
+
+class x extends Thread{
+	public void run(){
+		while(true) { //���������� ������
+            try {
+                Thread.sleep(4000); // 4 ������� � ������������
+                System.out.println("Hi!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+	}
+}
+
+public class Timer {
+	public static void main(String[] arg) {
+		x x = new x();
+		x.start();
+	}
+}
+
+ProgressBar::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+JProgressBar progressBar = new JProgressBar();
+progressBar.setStringPainted(true);
+progressBar.setMinimum(0);
+progressBar.setMaximum(100);
+
+Get/Set::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+     public String getName() {
+       return name;
+   }
+
+   public void setName(String name) {
+       this.name = name;
+   }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Write in zip
+
+    public static void main(String[] args) throws IOException {
+        ZipOutputStream zos = new ZipOutputStream(new FileOutputStream("F:/test.zip"));
+        zos.putNextEntry(new ZipEntry(new File("F:/test.txt").getName()));
+        zos.close();
+    }
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+char[] eng = {'a','b','c','d','e','f','g','h','q','w','r','t','y','u','i','o','p','s','j','k','l','m','n','z','x','v'};

@@ -1,0 +1,134 @@
+Общие команды
+Что бы проверить статус сервера MYSQL выполните:
+
+systemctl status mysql
+Что бы подключиться к серверу MySQL из консоли, если сервер MySQL находится на том же хосте:
+
+mysql -u username -p
+Что бы подключиться к серверу MySQL из консоли, если сервер MySQL 
+находится на удаленном хосте db1.example.com:
+
+mysql -u username -p -h db1.example.com
+
+
+create table NAME (
+	personid INT(50) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	firstname VARCHAR(35),
+	middlename VARCHAR(50),
+	lastname VARCHAR(50) default 'bato'
+	);
+
+
+РАБОТА С БАЗАМИ
+
+
+Создать базу данных на MySQL сервере:
+
+mysql> CREATE DATABASE [databasename];
+
+Показать список всех баз данных на сервере MySQL:
+
+mysql> SHOW DATABASES;
+
+Переключиться для работы с определенной базой данных:
+
+mysql> USE [db name];
+
+Удалить базу:
+
+mysql> DROP DATABASE [database name];
+
+
+
+
+
+РАБОТА С ТАБЛИЦАМИ
+
+
+Отобразить все таблицы в базе данных:
+
+mysql> SHOW TABLES;
+
+Просмотреть формат таблицы в базе:
+
+mysql> DESCRIBE [table name];
+
+Показать все содержимое таблицы:
+
+mysql> SELECT * FROM [table name];
+
+Отобразить количество строк в таблице:
+
+mysql> SELECT COUNT(*) FROM [table name];
+
+Подсчитать количество колонок в таблице:
+
+mysql> SELECT SUM(*) FROM [table name];
+
+Удаление строки в таблице:
+
+mysql> DELETE from [table name] where [field name] = 'whatever';
+
+Удаление столбца из таблицы:
+
+mysql> alter table [table name] DROP INDEX [column name];
+
+Удалить таблицу из базы:
+
+mysql> DROP TABLE [table name];
+
+
+
+
+
+РАБОТА С КОЛОНКАМИ
+
+
+Добавить колонку в таблицу:
+
+mysql> ALTER TABLE [table name] ADD COLUMN [new column name] varchar (20);
+
+Изменение имени колонки:
+
+mysql> ALTER TABLE [table name] CHANGE [old column name] [new column name] varchar (50);
+
+Создать колонку с уникальным именем, что бы избежать дубликатов в названиях:
+
+mysql> ALTER TABLE [table name] ADD UNIQUE ([column name]);
+
+Изменение размера колонки:
+
+mysql> ALTER TABLE [table name] MODIFY [column name] VARCHAR(3);
+
+
+
+
+РАБОТА С ПОЛЯМИ
+
+Изменить поле:
+
+INSERT INTO users(name, valute) VALUES('Alex', 1)
+
+Обновить поле:
+
+UPDATE `users` SET `valute` = 1 WHERE name = 'Alex' AND id = 5;
+
+Удалить поле:
+
+DELETE FROM users WHERE name = 'Alex';
+
+
+
+ВЫБОРКА ДАННЫХ
+
+
+Показать все содержимое таблицы:
+
+mysql> SELECT * FROM [table name];
+Отобразить колонки и их содержимое в выбранной таблице:
+
+mysql> SHOW COLUMNS FROM [table name];
+
+Отобразить строки в определенной  таблице, содержащие «whatever«:
+
+mysql> SELECT * FROM [table name] WHERE [field name] = "whatever";
